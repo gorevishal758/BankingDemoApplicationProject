@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href='/css/home.css'> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+   
+     <link th:href="@{/css/home.css}" rel="stylesheet"/>
+    
+    <!-- /banking_appliaction/src/main/resources/static/css/home.css -->
+    
+    
+</head>
+<body>
+    <div id="sample-text-card" class="card">
+        <div class="card-body">
+            <h1>Easy-Way-Bank</h1>
+            <h3>Flexible Banking Solution</h3>
+            <p>The banking business requires a multifaceted approach to build your brand and reputation. Having a slogan can make all the difference. A great slogan is more than a catchy way to attract new customers. It will build your brand identity and customer trust. So if you’re looking for a good slogan for bank, you’ve come to the right place.</p>
+            <a href="#" th:href="@{/register}"><button id="b1">Register</button></a>
+           <a href="#" th:href="@{/login}"><button id="b2">Login</button></a> 
+
+        </div>
+        
+    </div>
+</body>
+</html>

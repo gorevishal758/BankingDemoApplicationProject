@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+body{
+    background-image: url("/img/Homebackground.jpg");
+}
+.card{
+    border: 2px solid rgb(52, 161, 215) ;
+    width: 500px;
+    height: 220px;
+    margin-top: 100px;
+    margin-left: 80px;
+    text-align: center;
+    
+}
+button{
+    width: 125px;
+    background-color: red;
+    
+}

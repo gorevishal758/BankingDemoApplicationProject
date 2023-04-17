@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	  <div class="menu">
+    <!-- ADD NEW ACCOUNT -->
+    <button class="btn btn-warning " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        Add New Account
+      </button>
+      
+       <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Transaction</button>
+      </div>
+      
+      <!--  container:total account balance display -->
+        <div class="conatiner1 d-flex py-3">
+           <h2 class="me-auto">Total Accounts Balance :  </h2>
+           
+           
+           <h2 class="me-auto" th:if="${totalBalance != null}" th:text="${totalBalance}"></h2>
+           
+           
+           
+           
+        </div>
+
+   <!--  ACCORDION -->
+   				<div><th:block th:if="${userAccounts != null}">
+   					 
+      				 	 <div th:each="account : ${userAccounts}" >
+      				 	 
+      				 	 	
+								     <div class="accordion accordion-flush" id="accordionFlushExample">
+						        <div class="accordion-item">
+						          <h2 class="accordion-header" id="flush-headingOne">
+						            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" th:data-bs-target="'#flush-' + ${account.account_id}"  aria-expanded="false" aria-controls="flush-collapseOne">
+						             <span th:text=${account.account_name}> </span>
+						            </button>
+						          </h2>
+						          <div th:id="'flush-' + ${account.account_id}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+						            <div class="accordion-body">
+						            
+						            	<ul>
+						            		<li class="list-group-item d-flex">Account Name : <span class="ms-auto" th:text=${account.account_name}></span></li>
+						            		<li class="list-group-item d-flex">Account Number : <span class="ms-auto" th:text=${account.account_number}></span></li>
+						            		<li class="list-group-item d-flex">Account Type : <span class="ms-auto" th:text=${account.account_type}></span></li>
+						            		<li class="list-group-item d-flex">Account Balance : <span class="ms-auto" th:text=${account.balance}></span></li>
+						            	
+						            	</ul>
+						            
+						            </div>
+						          </div>
+						        </div>
+						        </div>
+      				 	 
+      				 	 </div>
+    				
+				</th:block>
+			</div>	
+   
+</body>
+</html>
