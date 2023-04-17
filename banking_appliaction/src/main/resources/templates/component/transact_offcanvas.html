@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+
+	
+	
+     <!--  TRANSACTION -->
+     
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title text-white" id="offcanvasRightLabel ">Transaction</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <small class="card-text  text-white">Choose an option below to perform</small>
+       <!--  Transaction type :dropdown list -->
+        <select id="transact-type" name="transact-type" class="form-control my-3">
+            <option value="">--Select Transaction Type--</option>
+            <option th:value="payment">Payment</option>
+            <option th:value="transfer">Transfer</option>
+            <option th:value="deposite">Deposit</option>
+            <option th:value="withdraw">Withdraw</option>
+        </select>
+		
+		<div th:insert="component/transact_forms/deposite_form.html"></div>
+		<div th:insert="component/transact_forms/payment_form.html"></div>
+		<div th:insert="component/transact_forms/transfer_form.html"></div>
+		<div th:insert="component/transact_forms/withdraw_form.html"></div>
+      
+ </div>
+ </div>
+   
+   
+	
+	
+	
+	
+	
+</body>
+</html>

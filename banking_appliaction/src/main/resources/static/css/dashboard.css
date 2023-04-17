@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+
+}
+body{
+    /* background-image: url("/img/Homebackground.jpg"); */
+    background-color: rgba(23, 194, 233, 0.171);
+}
+.main-page-header{
+
+    padding: 15px 10px;
+}
+.main-page-header .company-name{
+
+    
+    color: white;
+}
+.navigation{
+    /* border: 1px solid white; */
+    margin-left: 100px;
+   
+}
+.navigation li{
+    display: inline-block;
+    list-style-type: none;
+    
+}
+.navigation li a{
+    color: white;
+    text-decoration: none;
+    
+}
+
+.btn{
+    font-weight: 800;
+
+}.container1{
+    margin: 10px 0px;
+    align-items: center;
+    text-align: center;
+    width: 81%;
+    margin-left: 95px;
+}
+.menu{
+    width: 80%;
+    text-align: center;
+     margin-left: 100px;
+}
+.btn{
+    margin-bottom: 20px;
+    /* box-shadow: 2px 2px 1px rgb(207, 18, 214); */
+}
+/* off canvas background */
+.offcanvas{
+    background-image: url("/img/Homebackground.jpg");
+}
+
+.payment-card{
+    display: none;
+}
+.transfer-card{
+    display: none;
+}
+.deposite-card{
+    display: none;
+}
+.withdraw-card{
+    display: none;
+}

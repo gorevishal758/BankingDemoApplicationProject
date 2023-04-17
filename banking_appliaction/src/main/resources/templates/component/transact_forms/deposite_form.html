@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+		 <!--   card:deposite card -->
+
+      
+
+        <div class="card deposite-card">
+        <form action="#" th:action="@{/transact/deposit}" method="POST" class="deposite-form">
+          <div class="card-body">
+              <!-- form-group -->
+  
+              <div class="form-group mb-3">
+                <label for=""> Enter Deposite Amount</label>
+                <input type="text" class="form-control" name="deposite_amount" placeholder="Enter deposite Amount">
+            </div>
+  
+              <div class="form-group">
+                <label for="">Select Account</label>
+                <select name="account_id" class="form-control my-3" id="">
+                  <option value="">--Select Account--</option>
+                  
+                   <th:block th:if="${userAccounts != null}">
+				      <th:block th:each="selectAccount : ${userAccounts}">
+				        <option th:value="${selectAccount.account_id}" th:text="${selectAccount.account_name}"></option>
+				      </th:block>
+				    </th:block>
+				    
+                </select>
+              </div>
+  
+            <div class="form-group mb-3">
+              <button id="" class="btn btn-primary transact_btn">Deposite</button>
+          </div>
+  
+          </div>
+            </form>
+      </div>
+    
+		
+		
+</body>
+</html>

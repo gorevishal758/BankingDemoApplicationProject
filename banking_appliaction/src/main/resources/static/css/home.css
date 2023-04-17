@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url("../img/Homebackground.jpg");
+    /* background-size: cover; */
+    /* background-position: center center; */
+    /* background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    display: flex; */
+    
+
+
+}
+.card-body{
+    border: 1px solid  rgb(52, 161, 215) ;
+    border-radius: 20%;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+   position: absolute;
+   margin-top: 100px;
+   margin-left: 400px;
+   margin-bottom: 200px;
+   text-align: center;
+  
+}
+
+#b1{
+    color: wheat;
+    background-color: red;
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    cursor: pointer;  
+    box-shadow: 0px 3px 6px blue; 
+}
+
+#b2{
+    color:black;
+    background-color:yellow;
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    cursor: pointer; 
+    box-shadow: 0px 3px 6px blue; 
+}

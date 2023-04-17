@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <!-- <link rel='stylesheet' href='/css/email.css'> -->
+
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+        body{
+            height: 100vh;
+            background-color: rgba(14, 14, 225, 0.256);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper{
+            width: 550PX;
+            height: auto;
+            padding: 15px;
+            background-color: whitesmoke;
+            border-radius: 15px;
+
+        }
+        .email-msg-header{
+            text-align: center;
+        }
+
+        .wrapper span{
+            font-size: 30px;
+            color: rgb(102, 83, 198);
+            display: block;
+            margin: 7px 0px;
+        }
+        .welcome-text{
+            text-align: center;
+            font-size: 20px;
+            margin-top: 5px;
+            margin-bottom: -1px;
+            display: inline-block;
+        }
+        .varify-account-btn{
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+            
+           
+            align-items: center;
+            background-color: rgb(62, 103, 192);
+            color: white;
+            border-radius: 6px;
+        }
+
+        .copy-right{
+            /* text-align: center; */
+            padding: 15px;
+            color: grey;
+            font-size: 14px;
+            margin:10px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class='wrapper'>
+        <!-- email msg header -->
+        <h2 class='email-msg-header'>
+            Welcome and Thank You ! for choosing
+            <br>
+            <span>Easy Way Bank</span>
+        </h2>
+        <hr>
+        <p class='welcome-text'>
+            Your Account has been successfully rgistered, please click below to verify your account
+        </p>
+        <br>
+        <br>
+
+        <center> <a href='' class='varify-account-btn' role='button'>Verify Account</a></center>
+        <div class='copy-right'>
+            &copy; copy right 2023. All Rights Reserved.
+        </div>
+    
+    </div>
+</body>
+</html>
