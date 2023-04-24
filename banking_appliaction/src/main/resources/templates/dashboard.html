@@ -36,8 +36,206 @@
 	
 	
    <div th:insert="component/incl/header.html"></div>
+   
+   		<!-- TRANSACT FORM START -->
+   		
+   		
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title text-white" id="offcanvasRightLabel ">Transaction</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <small class="card-text  text-white">Choose an option below to perform</small>
+        <!-- Transaction type :drop-down list -->
+        <select id="transact-type" name="transact-type" class="form-control my-3">
+            <option value="">--Select Transaction Type--</option>
+            <option value="payment">Payment</option>
+            <option value="transfer">Transfer</option>
+            <option value="deposite">Deposit</option>
+            <option value="withdraw">Withdraw</option>
+        </select>
+
+        <!-- card:payement card -->
+        
+        <div class="card payment-card">
+        <form action="#" th:action="@{/transact/payment}" method="POST" class="deposite-form">
+            <div class="card-body">
+                <!-- form-group -->
+                <div class="form-group mb-3">
+                    <label for="">Account Holder / Beneficiary</label>
+                    <input type="text" class="form-control" name="beneficiary" placeholder="Enter Account holder / Beneficairy name">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for=""> Beneficiary Account Number</label>
+                    <input type="text" class="form-control" name="account_number" placeholder="Enter Beneficairy Account no">
+                </div>
+
+                 <div class="form-group">
+                <label for="">Select Account</label>
+                <select name="account_id" class="form-control my-3" id="">
+                  <option value="">--Select Account--</option>
+                  
+                   <th:block th:if="${userAccounts != null}">
+				      <th:block th:each="selectAccount : ${userAccounts}">
+				        <option th:value="${selectAccount.account_id}" th:text="${selectAccount.account_name}"></option>
+				      </th:block>
+				    </th:block>
+				    
+                </select>
+              </div>
+
+                <div class="form-group mb-3">
+                  <label for="">Reference</label>
+                  <input type="text" class="form-control" name="reference" placeholder="Enter Reference">
+              </div>
+
+              <div class="form-group mb-3">
+                  <label for=""> Enter Payment Account</label>
+                  <input type="text" class="form-control" name="payment_amount" placeholder="Enter Payement Amount">
+              </div>
+
+              <div class="form-group mb-3">
+                <button id="" class="btn btn-primary transact_btn">Pay</button>
+            </div>
+
+            </div>
+            </form>
+        </div>
+
+
+         <!-- card:transfer card -->
+         <div class="card transfer-card">
+         
+         <form action="#" th:action="@{/transact/transfer}" method="POST" class="deposite-form">
+          <div class="card-body">
+              <!-- form-group -->
+
+             <div class="form-group">
+                <label for="">Select Account</label>
+                <select name="transfer_from" class="form-control my-3" id="">
+                  <option value="">--Select Account--</option>
+                  
+                   <th:block th:if="${userAccounts != null}">
+				      <th:block th:each="selectAccount : ${userAccounts}">
+				        <option th:value="${selectAccount.account_id}" th:text="${selectAccount.account_name}"></option>
+				      </th:block>
+				    </th:block>
+				    
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="">Select Account</label>
+                <select name="transfer_to" class="form-control my-3" id="">
+                  <option value="">--Select Account--</option>
+                  
+                   <th:block th:if="${userAccounts != null}">
+				      <th:block th:each="selectAccount : ${userAccounts}">
+				        <option th:value="${selectAccount.account_id}" th:text="${selectAccount.account_name}"></option>
+				      </th:block>
+				    </th:block>
+                  
+                </select>
+              </div>
+              
+
+
+            <div class="form-group mb-3">
+                <label for=""> Enter transfer Amount</label>
+                <input type="text" class="form-control" name="transfer_amount" placeholder="Enter transfer Amount">
+            </div>
+
+            <div class="form-group mb-3">
+              <button id="" class="btn btn-primary transact_btn">Transfer</button>
+          </div>
+
+          </div>
+          </form>
+      </div>
+
+      <!-- card:deposite card -->
+
+      <!-- <form action="" class="deposite-form"> -->
+
+        <div class="card deposite-card">
+        <form action="#" th:action="@{/transact/deposit}" method="POST" class="deposite-form">
+          <div class="card-body">
+              <!-- form-group -->
+  
+              <div class="form-group mb-3">
+                <label for=""> Enter Deposit  Amount</label>
+                <input type="text" class="form-control" name="deposite_amount" placeholder="Enter deposite Amount">
+            </div>
+  
+             <div class="form-group">
+                <label for="">Select Account</label>
+                <select name="account_id" class="form-control my-3" id="">
+                  <option value="">--Select Account--</option>
+                  
+                   <th:block th:if="${userAccounts != null}">
+				      <th:block th:each="selectAccount : ${userAccounts}">
+				        <option th:value="${selectAccount.account_id}" th:text="${selectAccount.account_name}"></option>
+				      </th:block>
+				    </th:block>
+				    
+                </select>
+              </div>
+  
+            <div class="form-group mb-3">
+              <button id="" class="btn btn-primary transact_btn">Deposit</button>
+          </div>
+  
+          </div>
+          </form>
+      </div>
+      
+
+    <!-- card:withdraw card -->
+
+    <div class="card withdraw-card">
+    <form action="#" th:action="@{/transact/withdraw}" method="POST" class="deposite-form">
+      <div class="card-body">
+          <!-- form-group -->
+
+           <div class="form-group">
+                <label for="">Select Account</label>
+                <select name="account_id" class="form-control my-3" id="">
+                  <option value="">--Select Account--</option>
+                  
+                   <th:block th:if="${userAccounts != null}">
+				      <th:block th:each="selectAccount : ${userAccounts}">
+				        <option th:value="${selectAccount.account_id}" th:text="${selectAccount.account_name}"></option>
+				      </th:block>
+				    </th:block>
+				    
+                </select>
+              </div>
+
+
+        <div class="form-group mb-3">
+            <label for=""> Enter withdraw Amount</label>
+            <input type="text" class="form-control" name="withdraw_amount" placeholder="Enter Withdraw Amount">
+        </div>
+
+        <div class="form-group mb-3">
+          <button id="" class="btn btn-primary transact_btn">Withdraw</button>
+      </div>
+
+      </div></form>
+  </div>
+
+  </div>
+ 
+</div>
+   		
+   		
+   		
+   		<!-- TRANSACT FORM END -->
      
-     <div th:insert="component/transact_offcanvas.html"></div>
+     <!-- <div th:insert="component/transact_offcanvas.html"></div> -->
      
      <div th:insert="component/add_account_canvas.html"></div>
 
@@ -45,10 +243,6 @@
 	
 <p th:if="${#lists.size(userAccounts) > 0}" th:insert="component/account_display.html"></p>
 <p th:else th:insert="component/no_account_display.html"></p>
-
-	
-      
-
    
    </body>
    <script th:src="@{/js/main.js}"></script>

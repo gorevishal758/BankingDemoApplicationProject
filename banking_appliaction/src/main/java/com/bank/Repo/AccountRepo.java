@@ -1,6 +1,7 @@
 package com.bank.Repo;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Modifying;
@@ -17,12 +18,14 @@ import jakarta.transaction.Transactional;
 public interface AccountRepo extends CrudRepository<Accounts, Integer>{
 
 	@Modifying
-	@Query(value="INSERT INTO accounts(user_id,account_number,account_name,account_type) VALUES(:user_id,:account_number,:account_name,:account_type)",nativeQuery = true)
+	@Query(value="INSERT INTO accounts(user_id,account_number,account_name,account_type,created_at) VALUES(:user_id,:account_number,:account_name,:account_type,:created_at)",nativeQuery = true)
 	@Transactional
 	void createBankAccount(@Param("user_id")int user_id,
 			@Param("account_number")String account_number,
 			@Param("account_name")String account_name,
-			@Param("account_type")String account_type);
+			@Param("account_type")String account_type,
+			@Param("created_at")LocalDateTime created_at);
+	
 	
 	@Query(value="SELECT * FROM accounts WHERE user_id = :user_id",nativeQuery = true)
 	List <Accounts> getUserAccountById(@Param("user_id")int user_id);

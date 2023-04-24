@@ -14,22 +14,22 @@ transactType.addEventListener("change",()=>{
     switch(transactType.value){
         case "payment":
             paymentCard.style.display="block";
-            paymentCard.nextElementSibling.style.display="none";
             withdrawCard.style.display="none";
             depositeCard.style.display="none";
+            paymentCard.nextElementSibling.style.display="none";
             
         break;    
         
         case "transfer":
             transferCard.previousElementSibling.style.display="none"
             transferCard.style.display="block";
-            transferCard.nextElementSibling.style.display="none";
             withdrawCard.style.display="none";
+            transferCard.nextElementSibling.style.display="none";
         break; 
 
         case "deposite":
+        	depositeCard.previousElementSibling.style.display="none"
             paymentCard.style.display="none";
-            depositeCard.previousElementSibling.style.display="none"
             depositeCard.style.display="block";
             depositeCard.nextElementSibling.style.display="none";
         break; 
