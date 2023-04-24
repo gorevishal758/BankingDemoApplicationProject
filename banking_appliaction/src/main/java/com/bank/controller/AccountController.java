@@ -1,4 +1,6 @@
 package com.bank.controller;
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,6 +23,7 @@ public class AccountController {
 	@Autowired
 	private AccountRepo accountRepo;
 	
+	LocalDateTime created_at=LocalDateTime.now();
 	
 	@PostMapping("/create_account")
 	public String createAccount(@Valid @RequestParam("account_name")String accountName,
@@ -41,10 +44,10 @@ public class AccountController {
 		String bankAccountNumber=Integer.toString(setAccountNumber);
 		
 		//CREATE ACCOUNT 
-		accountRepo.createBankAccount(user.getUser_id(), bankAccountNumber, accountName, accountType);
+		accountRepo.createBankAccount(user.getUser_id(), bankAccountNumber, accountName, accountType,created_at);
 		
 		//set success message
-		redirectAttributes.addFlashAttribute("success","Account Created Successfully.. ");
+		redirectAttributes.addFlashAttribute("success","Account Created Successfully....");
 		
 		return "redirect:/app/dashboard";
 	}

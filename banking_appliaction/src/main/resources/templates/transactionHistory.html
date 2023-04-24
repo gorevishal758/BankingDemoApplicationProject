@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+    crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/css/dashboard.css">
+
+</head>
+<body>
+
+	<!-- DISPLAY MESSAGE -->
+	
+
+			   <div th:insert="component/incl/header.html"></div>
+			   
+			 <div class="container">
+			 
+			 	 <div th:if="${transaction_history != null}">
+			  
+			  		<table class="table text-center">
+			  			<tr>
+			  				<th>Transaction Id</th>
+			  				
+			  				<th>Transaction Type</th>
+			  				<th>Amount</th>
+			  				<th>Source</th>
+			  				<th>Status</th>
+			  				<th>Reason Code</th>
+			  				<th>Created At</th>
+			  			</tr>
+			  		
+			  	<!-- loop throungh Transaction history record -->
+			  	
+			  	<div  th:each="transaction : ${transaction_history}" >
+			  		
+			  		<tr>
+			  			<td th:text="${transaction.transaction_id}"></td>
+			  		
+			  			<td th:text="${transaction.transaction_type}"></td>
+			  			<td th:text="${transaction.amount}"></td>
+			  			<td th:text="${transaction.source}"></td>
+			  			<td th:text="${transaction.status}"></td>
+			  			<td th:text="${transaction.reason_code}"></td>
+			  			<td th:text="${transaction.created_at}"></td>
+			  		
+			  		</tr>
+			  	</div>
+			  		</table>
+			  
+			  </div>
+			 
+			 
+			 </div>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    </body>
+   <script th:src="@{/js/main.js}"></script>
+   </html>
